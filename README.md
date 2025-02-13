@@ -22,12 +22,18 @@ Este repositório está dividido em **branches** para facilitar a organização:
 3. Execute os exemplos conforme necessário:
    - Para Dart:
      ```bash
-     dart run path/to/file.dart
+     dart run dart_examples/intro/variavel_opcional.dart
      ```
-   - Para Flutter:
-     ```bash
-     flutter run
-     ```
+   - Para Flutter (2 opções):
+      - Execute o script **run_example.sh** passando o nome do arquivo de exemplo como parâmetro:
+      ```bash
+      ./run_example.sh 01_widget_criar
+      ```
+
+      - Modifique o main.dart manualmente com o conteúdo dos exemplos da pasta *lib/examples* e rode:
+      ```bash
+      flutter run
+      ```
 
 ## 📦 Dependências
 
