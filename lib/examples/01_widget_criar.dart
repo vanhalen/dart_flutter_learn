@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
 // #####
 // Isso é um exemplo apenas para estudo, você pode retornar o texto diretamente
-// Mas dá para ter uma ideia de como criar widgets
+// Mas dá para ter uma ideia de como criar widgets StatelessWidget (imutáveis)
 // ####
 
 class MeuPrimeiroTexto extends StatelessWidget {
