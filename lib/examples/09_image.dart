@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Exemplo Completo de Imagem")),
+        appBar: AppBar(title: Text("Exemplo de Imagens")),
         body: Padding(
           padding: EdgeInsets.all(16),
           child: Center(
