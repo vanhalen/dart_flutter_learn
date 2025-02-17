@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(50), // Borda arredondada
                       child: Image(
-                        width: 100,
-                        height: 100,
+                        width: 130,
+                        height: 130,
                         image: AssetImage('assets/images/image_2.jpg'),
                       ),
                     ),
@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
                 Column(
                   children: [
                     Image(
-                      width: 100,
-                      height: 100,
+                      width: 130,
+                      height: 130,
                       image: AssetImage('assets/images/image_1.jpg'),
                     ),
                     Text('Imagem 2'),
@@ -46,8 +46,8 @@ class MyApp extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(50), // Borda arredondada
                       child: Image(
-                        width: 100,
-                        height: 100,
+                        width: 130,
+                        height: 130,
                         image: AssetImage('assets/images/image_2.jpg'),
                       ),
                     ),
