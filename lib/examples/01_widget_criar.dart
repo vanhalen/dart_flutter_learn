@@ -32,6 +32,8 @@ class MyApp extends StatelessWidget {
 class MeuPrimeiroTexto extends StatelessWidget {
   const MeuPrimeiroTexto({super.key});
 
+  // @override é um decorador para dizer que estamos sobreescrevendo
+  // um método existente, no caso o build, que já existe na classe StatelessWidget
   @override
   Widget build(BuildContext context) {
     return const Padding(
