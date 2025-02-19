@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
 
 // 🔹 Esse é um Stateless com parâmetros
 
-// Percebe que mesmo utilizando um estado imutável
-// podemos criar um widget passando parâmetros fixos
+// Perceba que mesmo utilizando um estado imutável
+// podemos criar um widget passando parâmetros fixos,
 // você pode conferir isso no widget CardBanda.
 
 // Isso acontece pois não precisamos avisar outros
