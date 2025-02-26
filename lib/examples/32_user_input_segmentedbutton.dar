@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
               SegmentedButton<Calendar>(
                 segments: const <ButtonSegment<Calendar>>[
                   ButtonSegment<Calendar>(
+                      tooltip: 'Um exemplo de tooltip',
                       value: Calendar.day,
                       label: Text('Dia'),
                       icon: Icon(Icons.calendar_view_day)),
@@ -116,6 +117,22 @@ class _MultiSelectionSegmentedButtonState
         });
       },
       multiSelectionEnabled: true, // 🔹 Permite múltiplas seleções
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const Color.fromARGB(
+                95, 208, 4, 4); // 🔹 Cor de fundo quando selecionado
+          }
+          return Colors.grey[200]; // 🔹 Cor de fundo quando não selecionado
+        }),
+        foregroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return Colors.white; // 🔹 Cor do texto quando selecionado
+          }
+          return Colors.black; // 🔹 Cor do texto quando não selecionado
+        }),
+      ),
+      selectedIcon: Icon(Icons.check_box_outlined),
     );
   }
 }
