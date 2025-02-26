@@ -1,0 +1,121 @@
+// Exemplo de SegmentedButton
+import 'package:flutter/material.dart';
+
+enum Calendar { day, week, month, year }
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Calendar calendarView = Calendar.day;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Exemplo de SegmentedButton')),
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              // 🔹 Seu exemplo - Seleção Única
+              Text(
+                'Selecionar apenas um:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              SegmentedButton<Calendar>(
+                segments: const <ButtonSegment<Calendar>>[
+                  ButtonSegment<Calendar>(
+                      value: Calendar.day,
+                      label: Text('Dia'),
+                      icon: Icon(Icons.calendar_view_day)),
+                  ButtonSegment<Calendar>(
+                      value: Calendar.week,
+                      label: Text('Semana'),
+                      icon: Icon(Icons.calendar_view_week)),
+                  ButtonSegment<Calendar>(
+                      value: Calendar.month,
+                      label: Text('Mês'),
+                      icon: Icon(Icons.calendar_view_month)),
+                  ButtonSegment<Calendar>(
+                      value: Calendar.year,
+                      label: Text('Ano'),
+                      icon: Icon(Icons.calendar_today)),
+                ],
+                selected: <Calendar>{calendarView},
+                onSelectionChanged: (Set<Calendar> newSelection) {
+                  setState(() {
+                    calendarView = newSelection.first;
+                  });
+                },
+              ),
+              SizedBox(height: 40),
+
+              // 🔹 Meu exemplo - Seleção Múltipla
+              Text(
+                'Selecionar múltiplos:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              MultiSelectionSegmentedButton(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// 🔹 Exemplo com Seleção Múltipla
+class MultiSelectionSegmentedButton extends StatefulWidget {
+  const MultiSelectionSegmentedButton({super.key});
+
+  @override
+  State<MultiSelectionSegmentedButton> createState() =>
+      _MultiSelectionSegmentedButtonState();
+}
+
+class _MultiSelectionSegmentedButtonState
+    extends State<MultiSelectionSegmentedButton> {
+  // 🔹 Permite múltiplas seleções
+  final Set<Calendar> _selectedItems = {Calendar.day, Calendar.month};
+
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedButton<Calendar>(
+      segments: const <ButtonSegment<Calendar>>[
+        ButtonSegment<Calendar>(
+            value: Calendar.day,
+            label: Text('Dia'),
+            icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(
+            value: Calendar.week,
+            label: Text('Semana'),
+            icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(
+            value: Calendar.month,
+            label: Text('Mês'),
+            icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(
+            value: Calendar.year,
+            label: Text('Ano'),
+            icon: Icon(Icons.calendar_today)),
+      ],
+      selected: _selectedItems,
+      onSelectionChanged: (Set<Calendar> newSelection) {
+        setState(() {
+          _selectedItems.clear();
+          _selectedItems.addAll(newSelection);
+        });
+      },
+      multiSelectionEnabled: true, // 🔹 Permite múltiplas seleções
+    );
+  }
+}
