@@ -14,6 +14,9 @@ class _MyAppState extends State<MyApp> {
   bool isChecked = false;
   bool light = true;
 
+  bool cutlery = false;
+  bool _volume = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,6 +39,21 @@ class _MyAppState extends State<MyApp> {
                   });
                 },
               ),
+              SizedBox(height: 10),
+
+              // 🔹 Exemplo de Checkbox com Título
+              CheckboxListTile(
+                title: const Text('Preciso de talheres'),
+                secondary: const Icon(Icons.restaurant),
+                value: cutlery,
+                onChanged: (bool? value) {
+                  setState(() {
+                    cutlery = value!;
+                  });
+                },
+              ),
+              SizedBox(height: 20),
+
               // 🔹 Exemplo de Switch
               Switch(
                 value: light,
@@ -46,6 +64,22 @@ class _MyAppState extends State<MyApp> {
                   });
                 },
               ),
+              SizedBox(height: 10),
+
+              // 🔹 Exemplo de Switch com Título
+              SwitchListTile(
+                title: const Text('Ativar som'),
+                value: _volume,
+                onChanged: (bool value) {
+                  setState(() {
+                    _volume = value;
+                  });
+                },
+                secondary: const Icon(Icons.volume_up),
+              ),
+
+              SizedBox(height: 20),
+              Text('Escolha uma banda:'),
               // 🔹 Exemplo de Radio
               RadioExemplo(),
             ],
