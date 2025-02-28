@@ -46,6 +46,8 @@ class _MyAppState extends State<MyApp> {
                 title: const Text('Preciso de talheres'),
                 secondary: const Icon(Icons.restaurant),
                 value: cutlery,
+                // Descomente essa linha para o ícone ficar no final
+                // controlAffinity: ListTileControlAffinity.leading,
                 onChanged: (bool? value) {
                   setState(() {
                     cutlery = value!;
