@@ -43,6 +43,8 @@ class _DismissibleExemploState extends State<DismissibleExemplo> {
       padding: const EdgeInsets.symmetric(vertical: 16),
       itemBuilder: (BuildContext context, int index) {
         return Dismissible(
+          // direction: DismissDirection.vertical, // Caso queira que o deslize seja na vertical (cima/baixo)
+
           // Cor amarela com ícone de arquivar para deslizamento da ESQUERDA para a DIREITA
           background: Container(
             color: Colors.amber,
