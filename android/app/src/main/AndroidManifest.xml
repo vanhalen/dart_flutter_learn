@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dando permissão para internet (pacote http) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:label="dart_flutter_learn"
         android:name="${applicationName}"

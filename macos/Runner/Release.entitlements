@@ -4,5 +4,8 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+    <!-- Dando permissão para internet (pacote http) -->
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>
